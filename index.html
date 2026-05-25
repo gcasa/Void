@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NXVoid</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="desktop" aria-label="NXVoid game">
+      <section class="window game-window" aria-label="Void 2.0">
+        <div class="titlebar">
+          <button class="window-button" id="pauseButton" aria-label="Pause"></button>
+          <span>Void 2.0</span>
+          <button class="window-button right" id="soundButton" aria-label="Sound"></button>
+        </div>
+
+        <div class="workspace">
+          <div class="viewport-frame">
+            <canvas id="game" width="960" height="620" tabindex="0" aria-label="Space combat viewport"></canvas>
+            <div class="hud top-left">
+              <span id="statusText">READY</span>
+              <span id="waveText">SECTOR 01</span>
+            </div>
+            <div class="hud top-right">
+              <span id="speedText">000</span>
+              <span id="ammoText">LASER</span>
+            </div>
+            <div class="hud bottom-center" id="messageText">Click the viewport, then use arrows or WASD. Space fires.</div>
+          </div>
+
+          <aside class="panel stack">
+            <div class="panel-title">Radar</div>
+            <canvas id="radar" width="220" height="220" aria-label="Radar"></canvas>
+            <div class="meter-grid">
+              <label>Hull <meter id="hullMeter" min="0" max="100" value="100"></meter></label>
+              <label>Energy <meter id="energyMeter" min="0" max="100" value="100"></meter></label>
+            </div>
+          </aside>
+
+          <aside class="panel stats">
+            <div class="panel-title">Performance</div>
+            <dl>
+              <dt>Score</dt><dd id="scoreText">0</dd>
+              <dt>Hits</dt><dd id="hitsText">0</dd>
+              <dt>Boss</dt><dd id="bossText">Waiting</dd>
+              <dt>Link</dt><dd id="linkText">Local sim</dd>
+            </dl>
+          </aside>
+
+          <aside class="panel comms">
+            <div class="panel-title">Communicator</div>
+            <div class="transcript" id="transcript" aria-live="polite"></div>
+            <div class="command-row">
+              <button id="tauntButton">Taunt Boss</button>
+              <button id="turkeyButton">Space Turkey</button>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
